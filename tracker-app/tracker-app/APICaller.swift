@@ -23,14 +23,14 @@ final class APICaller {
         completion: @escaping (Result<[Crypto], Error>) -> Void
     )
     {
-        guard let url = URL(string: Constants.assetsEndPoint + "?apikeys=" + Constants.apiKey) else {
+        guard let url = URL(string: Constants.assetsEndPoint + "?apikey=" + Constants.apiKey) else {
             return
         }
-        let task = URLSession.shared.dataTask(with: url) {data, _,
-            error in guard let data = data,
-            error == nil else {
-            return
-            }; do {
+        let task = URLSession.shared.dataTask(with: url) {data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+            do {
              // decode response
                 let cryptos = try JSONDecoder().decode([Crypto].self, from: data)
                 
