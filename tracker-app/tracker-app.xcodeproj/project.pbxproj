@@ -16,6 +16,7 @@
 		C0617C19284391200019BFAB /* tracker_appTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0617C18284391200019BFAB /* tracker_appTests.swift */; };
 		C0617C23284391200019BFAB /* tracker_appUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0617C22284391200019BFAB /* tracker_appUITests.swift */; };
 		C0617C25284391200019BFAB /* tracker_appUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0617C24284391200019BFAB /* tracker_appUITestsLaunchTests.swift */; };
+		C0617C32284391C50019BFAB /* APICaller.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0617C31284391C50019BFAB /* APICaller.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +50,7 @@
 		C0617C1E284391200019BFAB /* tracker-appUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "tracker-appUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C0617C22284391200019BFAB /* tracker_appUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tracker_appUITests.swift; sourceTree = "<group>"; };
 		C0617C24284391200019BFAB /* tracker_appUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tracker_appUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		C0617C31284391C50019BFAB /* APICaller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APICaller.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				C0617C0A284391200019BFAB /* Assets.xcassets */,
 				C0617C0C284391200019BFAB /* LaunchScreen.storyboard */,
 				C0617C0F284391200019BFAB /* Info.plist */,
+				C0617C31284391C50019BFAB /* APICaller.swift */,
 			);
 			path = "tracker-app";
 			sourceTree = "<group>";
@@ -261,6 +264,7 @@
 				C0617C062843911E0019BFAB /* ViewController.swift in Sources */,
 				C0617C022843911E0019BFAB /* AppDelegate.swift in Sources */,
 				C0617C042843911E0019BFAB /* SceneDelegate.swift in Sources */,
+				C0617C32284391C50019BFAB /* APICaller.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

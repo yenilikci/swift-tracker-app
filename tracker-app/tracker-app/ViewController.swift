@@ -7,6 +7,10 @@
 
 import UIKit
 
+// api caller
+// mvvm
+
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
