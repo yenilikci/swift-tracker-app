@@ -32,7 +32,7 @@ final class APICaller {
             return
             }; do {
              // decode response
-            }
+        }
             catch {
                 completion(.failure(error))
             }
