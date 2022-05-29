@@ -19,6 +19,8 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
                            forCellReuseIdentifier: CryptoTableViewCell.identifier)
         return tableView
     }()
+    
+    private var viewModels = [CryptoTableViewCellViewModel]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +29,21 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         tableView.dataSource = self
         tableView.delegate = self
         
-        APICaller.shared.getAllCryptoData { result in
+        APICaller.shared.getAllCryptoData { [weak self] result in
             switch result {
             case .success(let models):
-                print(models.count)
+                self?.viewModels = models.compactMap({
+                    // NumberFormatter
+                    CryptoTableViewCellViewModel(
+                        name: $0.name ?? "N/A",
+                        symbol: $0.asset_id,
+                        price: "$1"
+                    )
+                })
+                
+                DispatchQueue.main.async {
+                    self?.tableView.reloadData()
+                }
             case .failure(let error):
                 print("Error: \(error)")
             }
@@ -45,7 +58,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     // TableView
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10  
+        return viewModels.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -54,7 +67,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         ) as? CryptoTableViewCell else {
             fatalError()
         }
-        cell.textLabel?.text = "Hello World!"
+        cell.configure(with: viewModels[indexPath.row])
         return cell
     }
 
